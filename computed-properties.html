@@ -41,7 +41,7 @@
       </ul>
 
       <p>{{isActive ? 'yes':'no'}}</p>
-      <p>{{message.split('').reverse('').join('')}}</p>
+      <p>{{reverseMessage}}</p>
       <button v-on:click="increment"> + </button>
       <button v-on:click="nullify"> 0 </button>
       <button v-on:click="decrement"> - </button>
@@ -93,6 +93,11 @@
             },
             nullify(){
                  return this.number = 0;
+            }
+        },
+        computed:{
+            reverseMessage(){
+                return this.message.split('').reverse('').join('');
             }
         }
     });
