@@ -27,7 +27,7 @@
 
     <div class="col-sm-12" id ="app">
 
-    <comp data="hellokkkk"></comp>
+    <comp data="hellokkkk" mss="message"></comp>
 
     <temp inline-template>
             <h1> HELLLLLLOOOO </h1>
@@ -61,9 +61,9 @@
     Vue.component('comp',{
         // props
 
-        props: ['data'],
+        props: ['data','mss'],
 
-        template:`<h1> Hai {{data}} </h1>`,
+        template:`<h1> Hai {{data}},{{mss}} </h1>`,
 
         data(){
             return {
