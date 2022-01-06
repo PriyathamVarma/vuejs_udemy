@@ -2,7 +2,7 @@
 <html lang="en">
     <!------- HEADEER of the file --------->
 <head>
-    <title>Vue js using udemy</title>
+  <title>Vue js using udemy</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
@@ -16,34 +16,38 @@
 <!-- Body of the file -->
 <body>
 
+<div id="styling">
+    <div   v-bind:class="{headerOwn: isActive, headerOwnV2:!isActive}" >
+        VARMAS Portfolio
+        <p v-on:mouseover="isActive = !isActive">Change color</p>
+    </div>  
+</div>
 
-<div class="header-own" id ="portfolio">
-    VARMAS Portfolio<br/>
-    <a :href="url">My Git Hub Account</a>
-</div>  
 
 <div class="container-fluid mt-5">
-  <div class="row">
-    <div class="col-sm-4" id ="app">
-      <h3>{{message}}</h3>
-      <p>{{number}}</p>
 
-      <p>{{isActive ? 'yes':'no'}}</p>
-      <p>{{message.split('').reverse('').join('')}}</p>
+  <div class="row">
+
+    <div class="col-sm-4" id ="app">
+
+
     </div>
+
     <div class="col-sm-4">
-      <h3>Details</h3>
-      
+      <h3>Column 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
     </div>
+
     <div class="col-sm-4">
       <h3>Column 3</h3>        
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
     </div>
-  </div>
-</div>
 
+  </div><!-- row div end -->
+
+</div><!-- container div end -->
 
 <!-- Footer section -->
 <div class="footer-own">
@@ -57,21 +61,17 @@
 
 <script>
 
-   var app =  new Vue({
-        el: '#app',
+
+    var styling =  new Vue({
+        el: '#styling',
         data:{
 
             number :10,
             message: 'helhgcjhgccmhglo',
             isActive:true,
-            
-        }
-    });
+            color: 'blue'
 
-    var portfolio = new Vue({
-        el : '#portfolio',
-        data:{
-            url: 'https://github.com/PriyathamVarma/vuejs_udemy'
+
         }
     });
 

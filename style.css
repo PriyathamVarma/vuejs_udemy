@@ -51,6 +51,32 @@ button{
     color: white;
 }
 
+.headerOwn{
+    background-color: #606c38;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bolder;
+    height:100px;
+    width:100%;
+    padding: 5px 10px;
+    border-bottom: 3px solid khaki;
+    position: relative;
+    margin-top: 0px;
+
+}
+
+.headerOwnV2{
+    background-color: #283618;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bolder;
+    height:100px;
+    width:100%;
+    padding: 5px 10px;
+    color: white;
+
+}
+
 
 /* Body section */
 
