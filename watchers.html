@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!------- HEADEER of the file --------->
+<head>
+  <title>Vue js using udemy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- style.css -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- Body of the file -->
+<body>
+
+
+<div class="header-own">
+    VARMAS Portfolio
+</div>  
+
+<div class="container-fluid mt-5">
+
+  <div class="row">
+
+    <div class="col-sm-4" id ="app">
+
+      <h3 v-if="message != 'Intro'">Not Message</h3>
+      <h3 v-else-if="message == 'Intro'">{{message + 'Intro'}}</h3>
+      <h3 v-else>{{message}}</h3>
+
+      <h4>Change name</h4>
+      <input type="text" v-model="message"/>
+
+      <p>{{number}}</p>
+      
+      <ul v-for="info in listInfo">
+          <li>{{info}}</li>
+      </ul>
+
+      <P>Member :{{isMember === 'yes' ? 'YES' : 'NO'}}</P>
+      <p>{{isActive ? 'yes':'no'}}</p>
+      <p>{{reverseMessage}}</p>
+      <button v-on:click="increment"> + </button>
+      <button v-on:click="nullify"> 0 </button>
+      <button v-on:click="decrement"> - </button>
+    </div>
+
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+
+    <div class="col-sm-4">
+      <h3>Column 3</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+
+  </div><!-- row div end -->
+
+</div><!-- container div end -->
+
+<!-- Footer section -->
+<div class="footer-own">
+    Made with Lust ;)
+</div>  
+
+<!-- vue js cdn link -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<!-- vue instance -->
+
+<script>
+
+   var app =  new Vue({
+        el: '#app',
+        data:{
+
+            number :10,
+            message: 'Intro',
+            isActive:true,
+            isMember: 'yes',
+            listInfo:[1,2,3,4,5,6]
+        },
+        methods:{
+            increment(){
+                 return this.number++;
+            },
+            decrement(){
+                 return this.number--;
+            },
+            nullify(){
+                 return this.number = 0;
+            }
+        },
+        computed:{
+            reverseMessage(){
+                return this.message.split('').reverse('').join('');
+            }
+        },
+        watch:{
+            isMember(newValue){
+                console.log('Sending notification -' + newValue);
+            }
+        }
+    });
+
+</script>
+
+</body>
+
+
+</html>
