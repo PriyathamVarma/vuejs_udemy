@@ -1,7 +1,31 @@
+/* This page conatins styles realted to all components. The section 
+is classified into headers, body and footer each having their own styles*/
+
+/* General */
 body{
     background-color:  #FFFAE5;
 }
 
+a{
+    color:honeydew;
+}
+
+a:hover{
+    font-size: 26px;
+    color:khaki;
+}
+
+button{
+    background-color: #606c38;
+    border: none;
+    border-radius: 5px solid;
+    width:50px;
+    height:50px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+/* Header section */
 .header-own{
     background-color: #606c38;
     text-align: center;
@@ -10,6 +34,9 @@ body{
     height:100px;
     width:100%;
     padding: 5px 10px;
+    border-bottom: 3px solid khaki;
+    position: relative;
+    margin-top: 0px;
 }
 
 
@@ -22,4 +49,21 @@ body{
     width:100%;
     padding: 5px 10px;
     color: white;
+}
+
+
+/* Body section */
+
+/* Footer section */
+.footer-own{
+    background-color:#606c38 ;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bolder;
+    height:100px;
+    width:100%;
+    padding: 5px 10px;
+    border-top: 3px solid khaki;
+    position: relative;
+    margin-top: 60%;
 }

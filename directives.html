@@ -30,6 +30,10 @@
       <p>{{number}}</p>
       <p>{{isActive ? 'yes':'no'}}</p>
       <p>{{message.split('').reverse('').join('')}}</p>
+      <button v-on:click="number++"> + </button>
+      <button v-on:click="number = 0"> 0 </button>
+      <button v-on:click="number--"> - </button>
+
     </div>
 
     <div class="col-sm-4">
